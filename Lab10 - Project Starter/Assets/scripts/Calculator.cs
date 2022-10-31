@@ -39,7 +39,10 @@ public class Calculator : MonoBehaviour {
 				case "/":
 				case "*":
 				case "=":
-				Calculate(s);
+                case "^":
+                case "√":
+
+                Calculate(s);
 				break;
 			case "ce":
 				ClearLastInput();
@@ -105,10 +108,18 @@ public class Calculator : MonoBehaviour {
 			case "/":
 				result = x / y;
 				break;
-		}
+            case "^":
+                result = Mathf.Pow(x, y);
+                break;
+            case "√":
+                result = Mathf.Sqrt(x);
+                break;
+        }
 
 		return result;
 	}
+
+    
 
 	//Add character input to input text string
 	private void AddCharacter(string s){
